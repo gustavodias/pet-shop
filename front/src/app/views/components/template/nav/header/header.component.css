@@ -1,0 +1,17 @@
+mat-toolbar{
+    background-color: rgba(153, 236, 236, 0.83);
+}
+
+.header{
+    height: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+
+h1{
+   font-size: 32px;
+   color: grey;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

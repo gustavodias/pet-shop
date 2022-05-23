@@ -1,0 +1,96 @@
+
+h2{
+    color: grey;
+}
+
+.form{
+    width: 40%;
+    height: 100%;
+    margin:auto;
+    margin-top: 5%;
+}
+
+.design-form{
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    margin-bottom: 16px;
+
+    background: rgba(153, 236, 236, 0.27);
+    mix-blend-mode: normal;
+    border: 1px solid rgba(97, 182, 182, 0.83);
+    border-radius: 10px;
+}
+
+#umLin{
+    width: 30%;
+}
+
+#doisLin{
+    width: 65%;
+    margin-right: 5%;
+}
+
+#tresLin{
+    width: 30%;
+    margin-right: 5%;
+}
+
+
+button{
+    margin-left: 20%;
+}
+
+#cadastrar{
+    background-color: rgba(153, 236, 236, 0.83);
+    color: grey;
+}
+
+#cancelar{
+    background-color: rgba(214, 2, 2, 0.83);
+    color: white;
+}
+
+
+mat-label{
+    color: grey;
+    width: 32px;
+}
+
+input{
+    color: rgb(51, 51, 51);
+}
+
+img{
+    position: absolute;
+}
+
+.buldog{
+width: 20%;
+height: 25%;
+left: 10%;
+top: 20%;
+}
+
+.gato{
+width: 20%;
+height: 20%;
+left: 70%;
+top: 30%;
+}
+
+.hamster{
+    width: 15%;
+    height: 15%;
+    left: 72%;
+    top: 70%;  
+}
+
+.cao{
+    width: 20%;
+    height: 25%;
+    left: 10%;
+    top: 50%; 
+}
