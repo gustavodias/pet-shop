@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { DEFAULT_CURRENCY_CODE, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -29,6 +29,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './views/components/template/nav/header/header.component';
 import { ClienteCreateComponent } from './views/components/cliente/cliente-create/cliente-create.component';
 import { LoginComponent } from './views/components/login/login.component';
+import { FuncionarioCreateComponent } from './views/components/funcionario/funcionario-create/funcionario-create.component';
+import { HomeComponent } from './views/components/home/home.component';
+import { FuncionarioReadComponent } from './views/components/funcionario/funcionario-read/funcionario-read.component';
+import { FuncionarioUpdateComponent } from './views/components/funcionario/funcionario-update/funcionario-update.component';
+import { CargoCreateComponent } from './views/components/funcionario/cargo/cargo-create/cargo-create.component';
+import { CargoUpdateComponent } from './views/components/funcionario/cargo/cargo-update/cargo-update.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +43,13 @@ import { LoginComponent } from './views/components/login/login.component';
     ClienteCreateComponent,
     FooterComponent,
     NavComponent,
-    LoginComponent
+    LoginComponent,
+    FuncionarioCreateComponent,
+    HomeComponent,
+    FuncionarioReadComponent,
+    FuncionarioUpdateComponent,
+    CargoCreateComponent,
+    CargoUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +74,7 @@ import { LoginComponent } from './views/components/login/login.component';
     HttpClientModule,
     NgxMaskModule.forRoot() 
   ],
-  providers: [],
+  providers: [{ provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

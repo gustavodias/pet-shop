@@ -1,0 +1,156 @@
+
+<h1>Cadastro de Funcionarios</h1>
+<form class="form">
+    <mat-form-field class="design-form">
+      <mat-label>Nome Completo</mat-label>
+      <input [(ngModel)]="usuario.nome" 
+      [formControl]="nome" required 
+      name="nome" 
+      maxlength="100" 
+      matInput placeholder="Ex. Eduardo Nilo"
+      value="">
+    </mat-form-field>
+
+    <mat-form-field class="design-form">
+      <mat-label>Email</mat-label>
+      <input [(ngModel)]="funcionario.email" 
+      [formControl]="email" required 
+      name="email" 
+      maxlength="100" 
+      matInput placeholder="Ex. eduardo@gmail.com"
+      value="">
+    </mat-form-field>
+
+    <mat-form-field class="design-form" >
+      <mat-label>Cargo</mat-label>
+      <mat-select value="ATENDENTE" [(ngModel)]="cargo.nome" [formControl]="nome" required name="nome" matNativeControl placeholder="Cargo *">
+          <mat-option *ngFor="let cargo of cargos" [value]="cargo.id">{{cargo.nome}}</mat-option>
+      </mat-select>
+  </mat-form-field>
+
+    <mat-form-field class="design-form" id='doisLin'>
+      <mat-label>CPF</mat-label>
+      <input type="text"
+       [(ngModel)]="usuario.cpf" 
+       [formControl]="cpf" required 
+       name="cpf" 
+       maxlength="14" 
+       matInput placeholder="Ex. 000.000.000-00" 
+       value=""
+       [mask]="'000.000.000-00'">
+    </mat-form-field>
+
+    <mat-form-field class="design-form" id='umLin'>
+      <mat-label>Data de Nascimento</mat-label>
+      <input type="date" 
+      [(ngModel)]="usuario.dataNascimento" 
+      [formControl]="dataNascimento" required 
+      name="dataNascimento" 
+      maxlength="10" 
+      matInput placeholder="Ex. 03/02/2000" 
+      value="">
+    </mat-form-field>  
+
+    <mat-form-field class="design-form">
+      <mat-label>Senha</mat-label>
+      <input type="password"
+      [(ngModel)]="funcionario.senha" 
+      [formControl]="senha" required 
+      name="senha" 
+      maxlength="30" 
+      matInput placeholder="123456*@asd" 
+      value="">
+    </mat-form-field>
+
+    <mat-form-field class="design-form">
+      <mat-label>Telefone:</mat-label>
+      <input type="text"
+      [(ngModel)]="usuario.telefone" 
+      [formControl]="telefone" required 
+      name="telefone" 
+      maxlength="16" 
+      matInput placeholder="(81) 9 9999-9999" 
+      value=""
+      [mask]="'(00) 0 0000-0000'">
+    </mat-form-field>
+
+    <mat-form-field class="design-form" id='doisLin'>
+      <mat-label>Rua</mat-label>
+      <input type = "text"
+      [(ngModel)]="usuario.logradouro" 
+      [formControl]="logradouro" required 
+      name="logradouro" 
+      maxlength="100" 
+       matInput placeholder="Ex. rua exemplo" 
+       value="">
+    </mat-form-field>
+
+    <mat-form-field class="design-form" id='umLin'>
+      <mat-label>Nº</mat-label>
+      <input type = "number"
+      [(ngModel)]="usuario.numero" 
+      [formControl]="numero" required 
+      name="numero" 
+      maxlength="10" 
+      matInput placeholder="Ex. 33" value="">
+    </mat-form-field>
+
+    <mat-form-field class="design-form" id='doisLin'>
+      <mat-label>Bairro</mat-label>
+      <input type = "text"
+      [(ngModel)]="bairro.nome" 
+      [formControl]="bairroNome" required 
+      name="bairro" 
+      maxlength="10" 
+      matInput placeholder="Ex. Casa Amarela" 
+      value="">
+    </mat-form-field>
+
+    <mat-form-field class="design-form" id='umLin'>
+      <mat-label>Cep</mat-label>
+      <input type = "text"
+      [(ngModel)]="usuario.cep" 
+      [formControl]="cep" required 
+      name="cep" 
+      maxlength="10" 
+      matInput placeholder="Ex. 50050050" 
+      value="" 
+      [mask]="'00000-000'">
+    </mat-form-field>
+
+    <mat-form-field class="design-form" id="tresLin">
+      <mat-label>Cidade</mat-label>
+      <input type = "text"
+      [(ngModel)]="cidade.nome" 
+      [formControl]="cidadeNome" required 
+      name="cidade" 
+      maxlength="50"
+      matInput placeholder="Ex. Recife" 
+      value="">
+    </mat-form-field>
+
+    <mat-form-field class="design-form" id="tresLin">
+      <mat-label>UF</mat-label>
+      <input type = "text"
+      [(ngModel)]="estado.nome" 
+      [formControl]="estadoNome" required 
+      name="estado" 
+      maxlength="2"
+      matInput placeholder="Ex. PE" 
+      value="">
+    </mat-form-field>
+
+    <mat-form-field class="design-form" id="umLin">
+      <mat-label>Complemento</mat-label>
+      <input type = "text"
+      [(ngModel)]="usuario.complemento" 
+      [formControl]="complemento" required 
+      name="complemento" 
+      maxlength="100"
+      matInput placeholder="Ex. Casa, apto..." 
+      value="">
+    </mat-form-field>
+
+    <button id="cadastrar" mat-raised-button (click)="create()" color="accent">Cadastrar</button>
+    <button id="cancelar" mat-raised-button (click)="cancel()" color="warn">Cancelar</button>
+</form>

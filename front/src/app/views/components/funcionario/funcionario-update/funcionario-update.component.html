@@ -1,0 +1,27 @@
+
+<h1>Atualizar Funcionario</h1>
+<form class="form">
+    <mat-form-field class="design-form">
+      <mat-label>Nome Completo</mat-label>
+      <input [(ngModel)]="funcionario.nome" 
+      [formControl]="nome" required 
+      name="nome" 
+      maxlength="100" 
+      matInput placeholder="Ex. Eduardo Nilo"
+      value="true"
+      readonly=""
+     >
+      <mat-error *ngIf="nome.invalid">{{ errorValidName() }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="design-form" >
+      <mat-label>Cargo</mat-label>
+      <mat-select value="ATENDENTE" [(ngModel)]="funcionario.cargo" [formControl]="cargoNome" required name="cargoNome" matNativeControl placeholder="Cargo *">
+          <mat-option *ngFor="let cargo of cargos" [value]="cargo.nome">{{cargo.nome}}</mat-option>
+      </mat-select>
+  </mat-form-field>
+
+    <button id="cadastrar" mat-raised-button (click)="update()" color="accent">Atualizar</button>
+    <button id="cancelar" mat-raised-button (click)="cancel()" color="warn">Cancelar</button>
+</form>
+

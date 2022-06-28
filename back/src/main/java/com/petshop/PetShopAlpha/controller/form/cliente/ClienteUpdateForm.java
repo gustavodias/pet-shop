@@ -1,8 +1,5 @@
 package com.petshop.PetShopAlpha.controller.form.cliente;
 
-import com.petshop.PetShopAlpha.model.Cliente;
-import com.petshop.PetShopAlpha.repository.ClienteRepository;
-import com.petshop.PetShopAlpha.repository.EnderecoRepository;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -26,7 +23,7 @@ public class ClienteUpdateForm {
     @NotNull
     private Long idEndereco;
 
-    public ClienteUpdateForm(Cliente cliente) {
+  /*  public ClienteUpdateForm(Cliente cliente) {
         this.nome = cliente.getNome();
         this.cpf = cliente.getCpf();
         this.dataNascimento = cliente.getDataNascimento();
@@ -41,5 +38,5 @@ public class ClienteUpdateForm {
         cliente.get().setDataNascimento(this.dataNascimento);
         cliente.get().setEndereco(endereco.get());
         return cliente.get();
-    }
+    }*/
 }

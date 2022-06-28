@@ -1,0 +1,39 @@
+
+<h1>Cadastro de Funcionarios</h1>
+<form class="form">
+    <mat-form-field class="design-form">
+      <mat-label>Cargo</mat-label>
+      <input [(ngModel)]="cargo.nome" 
+      [formControl]="nome" required 
+      style="text-transform:uppercase;"
+      name="nome" 
+      maxlength="100" 
+      matInput placeholder="Ex. Atendente"
+      value="">
+    </mat-form-field>
+
+    <mat-form-field class="design-form">
+      <mat-label>Descricão</mat-label>
+      <textarea [(ngModel)]="cargo.descricao" 
+      [formControl]="descricao" required 
+      name="descricao" 
+      maxlength="100" 
+      matInput placeholder="Ex. Atender os clientes."
+      value=""></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="design-form">
+      <mat-label>Salário</mat-label>
+      <input [(ngModel)]="cargo.salario" 
+      type="number"
+      [formControl]="salario" required 
+      name="salario" 
+      maxlength="100" 
+      matInput placeholder="Ex. 1200.00"
+      value="">
+    </mat-form-field>
+
+    <button id="cadastrar" mat-raised-button (click)="update()" color="accent">Atualizar</button>
+    <button id="cancelar" mat-raised-button (click)="cancel()" color="warn">Cancelar</button>
+</form>
+

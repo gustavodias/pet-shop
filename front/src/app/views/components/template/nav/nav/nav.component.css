@@ -1,15 +1,12 @@
-.container {
-    height: 83.1%;
+.container{
+    height: 92%;
 }
 
-i {
-    margin-right: 1rem;
+i{
+    padding-right: 0.6rem;
+     color: rgba(6, 168, 168, 0.83);;
 }
 
-button {
-    margin: 1rem auto 0 1rem;
-}
-
-.sidenav-content{
-    background-color: white;
+span{
+    color: rgb(90, 90, 90);
 }

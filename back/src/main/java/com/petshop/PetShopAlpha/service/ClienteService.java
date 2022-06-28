@@ -1,42 +1,42 @@
 package com.petshop.PetShopAlpha.service;
 
-import com.petshop.PetShopAlpha.controller.form.cliente.ClienteAllParamForm;
-import com.petshop.PetShopAlpha.controller.dto.cliente.ClienteFullDTO;
+import com.petshop.PetShopAlpha.controller.dto.cliente.ClienteDTO;
+import com.petshop.PetShopAlpha.controller.form.cliente.ClienteAllForm;
+import com.petshop.PetShopAlpha.model.cliente.Cliente;
+import com.petshop.PetShopAlpha.model.endereco.Cidade;
 import com.petshop.PetShopAlpha.repository.ClienteRepository;
+import com.petshop.PetShopAlpha.service.usuario.UsuarioService;
+import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
+@AllArgsConstructor
 public class ClienteService {
 
-    private final ClienteRepository clienteRepository;
-    private final EnderecoService enderecoService;
-    private final ContatoService contatoService;
+    private final ClienteRepository repository;
+    private final UsuarioService usuarioService;
     private final PasswordEncoder encoder;
 
-    public ClienteService(ClienteRepository clienteRepository, PasswordEncoder encoder, EnderecoService enderecoService, ContatoService contatoService) {
-        this.clienteRepository = clienteRepository;
-        this.encoder = encoder;
-        this.enderecoService = enderecoService;
-        this.contatoService = contatoService;
+    public List<ClienteDTO> findAll(){
+        var list = repository.findAll();
+        return list.stream().map(ClienteDTO::new).collect(Collectors.toList());
     }
 
-    public List<ClienteFullDTO> findAll(){
-        var cliente = clienteRepository.findAll();
-        return cliente.stream().map(ClienteFullDTO::new).collect(Collectors.toList());
+    public Optional<Cliente> findById(Long id){
+        return repository.findById(id);
     }
 
-    public ClienteFullDTO saveClienteAllParam(ClienteAllParamForm form) throws ParseException {
-        var endereco = enderecoService.saveEndereco(form.getEndereco());
-        var cliente = form.getCliente().converter(endereco);
+    public ClienteDTO saveCliente(ClienteAllForm form) throws ParseException {
+        var usuario = usuarioService.saveUsuario(form.getUserAll());
+        var cliente = form.getCliente().converter(usuario);
         cliente.setSenha(encoder.encode(cliente.getSenha()));
-        clienteRepository.save(cliente);
-        contatoService.saveContato2(form.getContato(), cliente);
-        return new ClienteFullDTO(cliente);
-
+        repository.save(cliente);
+        return new ClienteDTO(cliente);
     }
 }
