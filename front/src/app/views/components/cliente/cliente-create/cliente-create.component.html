@@ -1,141 +1,69 @@
-<img class="buldog" src="https://img.freepik.com/vetores-gratis/adoravel-buldogue-frances-com-osso-fofo-adoravel-cao-de-raca-pura-mentindo-ou-cachorrinho-isolado-no-fundo-branco-animal-domestico-ou-animal-de-estimacao-engracado-frenchie-lindo-ilustracao-vetorial-no-estilo-cartoon-plana_198278-6922.jpg?w=2000">
-<img class="gato" src="https://static.vecteezy.com/ti/vetor-gratis/p3/2543411-cute-cat-or-kitten-animal-meow-cartoon-fofo-pets-exato-vector-colecao-ilustracao-cartoon-miau-gato-vetor.jpg">
-<img class="hamster" src="http://cdn5.colorir.com/desenhos/color/201916/hamster-simpatico-animais-1523480.jpg">
-<img class="cao" src="https://thumbs.dreamstime.com/b/cachorro-beagle-ou-filhote-sentado-humor-bachinho-ilustra%C3%A7%C3%A3o-do-vetor-de-desenho-bachelado-isolado-com-uma-plano-em-fundo-branco-156721002.jpg">
-
+<h1>
+    Cadastro de Clientes</h1>
 <form class="form">
-  <h2>Preencha seus dados</h2>
     <mat-form-field class="design-form">
-      <mat-label>Nome Completo</mat-label>
-      <input [(ngModel)]="cliente.nome" 
-      [formControl]="nome" required 
-      name="nome" 
-      maxlength="100" 
-      matInput placeholder="Ex. Eduardo Nilo"
-      value="">
-    </mat-form-field>
-
-    <mat-form-field class="design-form" id='doisLin'>
-      <mat-label>CPF</mat-label>
-      <input type="text"
-       [(ngModel)]="cliente.cpf" 
-       [formControl]="cpf" required 
-       name="cpf" 
-       maxlength="14" 
-       matInput placeholder="Ex. 000.000.000-00" 
-       value=""
-       [mask]="'000.000.000-00'">
-    </mat-form-field>
-
-    <mat-form-field class="design-form" id='umLin'>
-      <mat-label>Data de Nascimento</mat-label>
-      <input type="date" 
-      [(ngModel)]="cliente.dataNascimento" 
-      [formControl]="dataNascimento" required 
-      name="dataNascimento" 
-      maxlength="10" 
-      matInput placeholder="Ex. 03/02/2000" 
-      value="">
-    </mat-form-field>  
-
-    <mat-form-field class="design-form">
-      <mat-label>Senha</mat-label>
-      <input type="password"
-      [(ngModel)]="cliente.senha" 
-      [formControl]="senha" required 
-      name="senha" 
-      maxlength="30" 
-      matInput placeholder="123456*@asd" 
-      value="">
+        <mat-label>Nome Completo</mat-label>
+        <input [(ngModel)]="usuario.nome" [formControl]="nome" required name="nome" maxlength="100" matInput placeholder="Ex. Eduardo Nilo" value="">
     </mat-form-field>
 
     <mat-form-field class="design-form">
-      <mat-label>Telefone:</mat-label>
-      <input type="text"
-      [(ngModel)]="contato.telefone" 
-      [formControl]="telefone" required 
-      name="telefone" 
-      maxlength="16" 
-      matInput placeholder="(81) 9 9999-9999" 
-      value=""
-      [mask]="'(00) 0 0000-0000'">
+        <mat-label>Email</mat-label>
+        <input [(ngModel)]="cliente.email" [formControl]="email" required name="email" maxlength="100" matInput placeholder="Ex. eduardo@gmail.com" value="">
+    </mat-form-field>
+
+    <mat-form-field class="design-form">
+        <mat-label>Senha</mat-label>
+        <input type="password" [(ngModel)]="cliente.senha" [formControl]="senha" required name="senha" maxlength="30" matInput placeholder="123456*@asd" value="">
     </mat-form-field>
 
     <mat-form-field class="design-form" id='doisLin'>
-      <mat-label>Rua</mat-label>
-      <input type = "text"
-      [(ngModel)]="endereco.rua" 
-      [formControl]="rua" required 
-      name="rua" 
-      maxlength="100" 
-       matInput placeholder="Ex. rua exemplo" 
-       value="">
+        <mat-label>CPF</mat-label>
+        <input type="text" [(ngModel)]="usuario.cpf" [formControl]="cpf" required name="cpf" maxlength="14" matInput placeholder="Ex. 000.000.000-00" value="" [mask]="'000.000.000-00'">
     </mat-form-field>
 
     <mat-form-field class="design-form" id='umLin'>
-      <mat-label>Nº</mat-label>
-      <input type = "number"
-      [(ngModel)]="endereco.numero" 
-      [formControl]="numero" required 
-      name="numero" 
-      maxlength="10" 
-      matInput placeholder="Ex. 33" value="">
+        <mat-label>Data de Nascimento</mat-label>
+        <input type="date" [(ngModel)]="usuario.dataNascimento" [formControl]="dataNascimento" required name="dataNascimento" maxlength="10" matInput placeholder="Ex. 03/02/2000" value="">
+    </mat-form-field>
+
+    <mat-form-field class="design-form">
+        <mat-label>Telefone:</mat-label>
+        <input type="text" [(ngModel)]="usuario.telefone" [formControl]="telefone" required name="telefone" maxlength="16" matInput placeholder="(81) 9 9999-9999" value="" [mask]="'(00) 0 0000-0000'">
     </mat-form-field>
 
     <mat-form-field class="design-form" id='doisLin'>
-      <mat-label>Bairro</mat-label>
-      <input type = "text"
-      [(ngModel)]="endereco.bairro" 
-      [formControl]="bairro" required 
-      name="bairro" 
-      maxlength="10" 
-      matInput placeholder="Ex. Casa Amarela" 
-      value="">
+        <mat-label>Rua</mat-label>
+        <input type="text" [(ngModel)]="usuario.logradouro" [formControl]="logradouro" required name="logradouro" maxlength="100" matInput placeholder="Ex. rua exemplo" value="">
     </mat-form-field>
 
     <mat-form-field class="design-form" id='umLin'>
-      <mat-label>Cep</mat-label>
-      <input type = "text"
-      [(ngModel)]="endereco.cep" 
-      [formControl]="cep" required 
-      name="cep" 
-      maxlength="10" 
-      matInput placeholder="Ex. 50050050" 
-      value="" 
-      [mask]="'00000-000'">
+        <mat-label>Nº</mat-label>
+        <input type="number" [(ngModel)]="usuario.numero" [formControl]="numero" required name="numero" maxlength="10" matInput placeholder="Ex. 33" value="">
+    </mat-form-field>
+
+    <mat-form-field class="design-form" id='doisLin'>
+        <mat-label>Bairro</mat-label>
+        <input type="text" [(ngModel)]="bairro.nome" [formControl]="bairroNome" required name="bairro" maxlength="10" matInput placeholder="Ex. Casa Amarela" value="">
+    </mat-form-field>
+
+    <mat-form-field class="design-form" id='umLin'>
+        <mat-label>Cep</mat-label>
+        <input type="text" [(ngModel)]="usuario.cep" [formControl]="cep" required name="cep" maxlength="10" matInput placeholder="Ex. 50050050" value="" [mask]="'00000-000'">
     </mat-form-field>
 
     <mat-form-field class="design-form" id="tresLin">
-      <mat-label>Cidade</mat-label>
-      <input type = "text"
-      [(ngModel)]="endereco.cidade" 
-      [formControl]="cidade" required 
-      name="cidade" 
-      maxlength="50"
-      matInput placeholder="Ex. Recife" 
-      value="">
+        <mat-label>Cidade</mat-label>
+        <input type="text" [(ngModel)]="cidade.nome" [formControl]="cidadeNome" required name="cidade" maxlength="50" matInput placeholder="Ex. Recife" value="">
     </mat-form-field>
 
     <mat-form-field class="design-form" id="tresLin">
-      <mat-label>UF</mat-label>
-      <input type = "text"
-      [(ngModel)]="endereco.uf" 
-      [formControl]="uf" required 
-      name="uf" 
-      maxlength="2"
-      matInput placeholder="Ex. PE" 
-      value="">
+        <mat-label>UF</mat-label>
+        <input type="text" [(ngModel)]="estado.nome" [formControl]="estadoNome" required name="estado" maxlength="2" matInput placeholder="Ex. PE" value="">
     </mat-form-field>
 
     <mat-form-field class="design-form" id="umLin">
-      <mat-label>Complemento</mat-label>
-      <input type = "text"
-      [(ngModel)]="endereco.complemento" 
-      [formControl]="complemento" required 
-      name="complemento" 
-      maxlength="100"
-      matInput placeholder="Ex. Casa, apto..." 
-      value="">
+        <mat-label>Complemento</mat-label>
+        <input type="text" [(ngModel)]="usuario.complemento" [formControl]="complemento" required name="complemento" maxlength="100" matInput placeholder="Ex. Casa, apto..." value="">
     </mat-form-field>
 
     <button id="cadastrar" mat-raised-button (click)="create()" color="accent">Cadastrar</button>

@@ -1,8 +1,6 @@
 import { Cliente } from './cliente';
-import { Endereco } from './endereco';
-import { Contato } from './contato';
-export interface CLienteFull {
-    endereco:  Endereco;
+import { UserAll } from './usuario/userAll';
+export interface ClienteFull {
+    userAll:  UserAll;
     cliente: Cliente;
-    contato: Contato;
 }

@@ -1,0 +1,36 @@
+.create {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    color: rgba(6, 168, 168, 0.83);
+}
+
+.create h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 3%;
+}
+
+.create button {
+    width: 100%;
+    margin: 1rem auto;
+    color: rgba(6, 168, 168, 0.83);
+}
+
+.container {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+table {
+    width: 100%;
+}
+
+#edit {
+    color: rgba(6, 168, 168, 0.83);
+}
+
+#delete {
+    color: rgba(255, 0, 0, 0.534);
+}

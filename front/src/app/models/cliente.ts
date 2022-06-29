@@ -1,7 +1,6 @@
 export interface Cliente {
-    id?: any;
-    nome: String;
-    cpf: String;
-    senha: String;
-    dataNascimento: String;
+    id: any;
+    email: String;
+    nome?: String;
+    senha?: String;
 }

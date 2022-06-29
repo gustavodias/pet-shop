@@ -1,0 +1,39 @@
+<h1>
+    Cadastro de Pets</h1>
+<form class="form">
+    <mat-form-field class="design-form">
+        <mat-label>Nome</mat-label>
+        <input [(ngModel)]="pet.nome" [formControl]="nome" required style="text-transform:uppercase;" name="nome" maxlength="100" matInput placeholder="Ex. Jose" value="">
+    </mat-form-field>
+
+    <mat-form-field class="design-form">
+        <mat-label>Especie</mat-label>
+        <textarea [(ngModel)]="pet.especie" [formControl]="especie" required name="descricao" maxlength="100" matInput placeholder="Ex. Cachorro." value=""></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="design-form">
+        <mat-label>Raça</mat-label>
+        <input [(ngModel)]="pet.raca" [formControl]="raca" required name="raca" maxlength="100" matInput placeholder="Ex. Labrador" value="">
+    </mat-form-field>
+
+    <mat-form-field class="design-form">
+        <mat-label>Data Nascimento</mat-label>
+        <input type="date" [(ngModel)]="pet.dataNascimento" [formControl]="dataNascimento " required name="dataNascimento " maxlength="100 " matInput placeholder="Ex. 01/09/1995 " value=" ">
+    </mat-form-field>
+
+    <mat-form-field class="design-form ">
+        <mat-label>Peso</mat-label>
+        <input [(ngModel)]="pet.peso" [formControl]="peso" required name="peso " maxlength="100" matInput placeholder="Ex. 20.Kg " value=" ">
+    </mat-form-field>
+
+
+    <mat-form-field class="design-form ">
+        <mat-label>Cliente</mat-label>
+        <mat-select value=" " [(ngModel)]="cliente.nome" [formControl]="nome" required name="nome" matNativeControl placeholder="Cargo * ">
+            <mat-option *ngFor="let cliente of clientes" [value]="cliente.id">{{cliente.nome}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <button id="cadastrar " mat-raised-button (click)="create() " color="accent">Cadastrar</button>
+    <button id="cancelar " mat-raised-button (click)="cancel() " color="warn">Cancelar</button>
+</form>

@@ -1,3 +1,5 @@
+import { ClienteReadComponent } from './views/components/cliente/cliente-read/cliente-read.component';
+import { ProdutoReadComponent } from './views/components/produto/produto-read/produto-read.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClienteCreateComponent } from './views/components/cliente/cliente-create/cliente-create.component';
@@ -8,6 +10,10 @@ import { FuncionarioReadComponent } from './views/components/funcionario/funcion
 import { FuncionarioUpdateComponent } from './views/components/funcionario/funcionario-update/funcionario-update.component';
 import { CargoCreateComponent } from './views/components/funcionario/cargo/cargo-create/cargo-create.component';
 import { CargoUpdateComponent } from './views/components/funcionario/cargo/cargo-update/cargo-update.component';
+import { PetReadComponent } from './views/components/pet/pet-read/pet-read.component';
+import { ServicoReadComponent } from './views/components/servico/servico-read/servico-read.component';
+import { PedidoReadComponent } from './views/components/pedido/pedido-read/pedido-read.component';
+import { PetCreateComponent } from './views/components/pet/pet-create/pet-create.component';
 
 const routes: Routes = [
   {
@@ -27,8 +33,32 @@ const routes: Routes = [
       component: FuncionarioReadComponent
     },
     {
+      path: 'cliente/read',
+      component: ClienteReadComponent
+    },
+    {
+      path: 'produto/read',
+      component: ProdutoReadComponent
+    },
+    {
+      path: 'pet/read',
+      component: PetReadComponent
+    },
+    {
+      path: 'servico/read',
+      component: ServicoReadComponent
+    },
+    {
+      path: 'pedido/read',
+      component: PedidoReadComponent
+    },
+    {
       path: 'funcionario/cadastro',
       component: FuncionarioCreateComponent
+    },
+    {
+      path: 'pet/cadastro',
+      component: PetCreateComponent
     },
     {
       path: 'funcionario/update/:id',

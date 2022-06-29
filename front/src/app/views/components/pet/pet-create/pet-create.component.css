@@ -12,8 +12,7 @@ h1 {
     padding: 4rem 2rem;
 }
 
-.design-form,
-mat-option {
+.design-form {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
@@ -45,8 +44,7 @@ mat-label {
 }
 
 input,
-mat-option,
-mat-select {
+textarea {
     color: white;
 }
 

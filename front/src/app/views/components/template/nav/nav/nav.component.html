@@ -1,31 +1,39 @@
 <mat-sidenav-container class="container">
     <mat-sidenav mode="side" opened>
-      <!-- Body -->
-      <mat-nav-list>
-        <a routerLink="" mat-list-item>
-          <i class="material-icons">home</i>
-          <span>Home</span>
-        </a>
-        <a mat-list-item routerLink="/cliente/read">
-          <i class="material-icons">group</i>
-          <span>Clientes</span>
-        </a>
-        <a mat-list-item routerLink="/pet/read">
-          <i class="material-icons">pets</i>
-          <span>Pets</span>
-        </a>
-        <a mat-list-item routerLink="/funcionario/read">
-            <i class="material-icons">engineering</i>
-            <span>Funcionários</span> 
-          </a>
-        <a mat-list-item routerLink="/produto/read">
-          <i class="material-icons">inventory</i>
-          <span>Produtos</span>
-        </a>
-      </mat-nav-list>
+        <!-- Body -->
+        <mat-nav-list>
+            <a routerLink="" mat-list-item>
+                <i class="material-icons">home</i>
+                <span>Home</span>
+            </a>
+            <a mat-list-item routerLink="/cliente/read">
+                <i class="material-icons">group</i>
+                <span>Clientes</span>
+            </a>
+            <a mat-list-item routerLink="/pet/read">
+                <i class="material-icons">pets</i>
+                <span>Pets</span>
+            </a>
+            <a mat-list-item routerLink="/funcionario/read">
+                <i class="material-icons">engineering</i>
+                <span>Funcionários</span>
+            </a>
+            <a mat-list-item routerLink="/produto/read">
+                <i class="material-icons">inventory</i>
+                <span>Produtos</span>
+            </a>
+            <a mat-list-item routerLink="/servico/read">
+                <i class="material-icons">spa</i>
+                <span>Serviços</span>
+            </a>
+            <a mat-list-item routerLink="/pedido/read">
+                <i class="material-icons">shopping_cart</i>
+                <span>Pedidos</span>
+            </a>
+        </mat-nav-list>
     </mat-sidenav>
-  
+
     <mat-sidenav-content>
         <router-outlet></router-outlet>
     </mat-sidenav-content>
-  </mat-sidenav-container>
+</mat-sidenav-container>
